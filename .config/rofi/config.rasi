@@ -1,0 +1,86 @@
+configuration {
+    modi: "window,drun,run";
+    show-icons: true;
+    icon-theme: "Papirc";
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    location: 0;
+    yoffset: 0;
+    xoffset: 0;
+}
+
+* {
+    bg: rgba(30, 30, 30, 0.9);
+    bg-alt: rgba(45, 45, 45, 0.9);
+    fg: #ffffff;
+    fg-alt: #aaaaaa;
+    accent: #6c5ce7;
+    border: rgba(108, 92, 231, 0.3);
+    selected: #6c5ce7;
+}
+
+window {
+    background-color: @bg;
+    border: 1px;
+    border-color: @border;
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+}
+
+inputbar {
+    children: [entry];
+    background-color: @bg-alt;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 0 0 10px 0;
+}
+
+entry {
+    text-color: @fg;
+    placeholder: "Search...";
+    placeholder-color: @fg-alt;
+}
+
+listview {
+    background-color: @bg;
+    columns: 1;
+    lines: 8;
+    spacing: 5px;
+    scrollbar: false;
+}
+
+element {
+    children: [icon, text];
+    background-color: @bg;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+element selected {
+    background-color: @selected;
+}
+
+element-icon {
+    size: 24px;
+    foreground-color: @fg;
+}
+
+element-text {
+    foreground-color: @fg;
+}
+
+message {
+    background-color: @bg-alt;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 10px 0 0 0;
+}
+
+error-message {
+    background-color: rgba(255, 85, 85, 0.2);
+    border: 1px solid rgba(255, 85, 85, 0.5);
+    border-radius: 5px;
+    padding: 8px;
+    text-color: #ff5555;
+}
