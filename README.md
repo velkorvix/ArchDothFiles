@@ -1,69 +1,71 @@
 # Arch Hyprland Dotfiles
 
-My Hyprland configuration for Arch Linux with RTX 3050.
+Hyprland configuration for Arch Linux with RTX 3050.
 
-## Requirements
+## Dependencies
 
-- Hyprland
-- Waybar
-- Kitty
-- Waypaper
-- Hypridle
-- Wofi
-- Grim + Slurp (screenshots)
-- Playerctl
-- Brightnessctl
+```
+hyprland hypridle hyprlock waybar kitty wofi rofi waypaper   grim slurp libnotify playerctl brightnessctl wireplumber   thunar firefox zsh jetbrains-mono
+```
 
-## Installation
+Install:
+```bash
+sudo pacman -S hyprland hypridle hyprlock waybar kitty wofi rofi   grim slurp libnotify playerctl brightnessctl wireplumber   thunar firefox zsh
 
-1. Clone the repository:
+yay -S waypaper jetbrains-mono
+```
+
+## Install
+
 ```bash
 git clone https://github.com/mark-smitov/ArchDothFiles.git ~/.config/archdots
 cd ~/.config/archdots
+
+cp -r .config/cava ~/.config/
+cp -r .config/hypr ~/.config/
+cp -r .config/kitty ~/.config/
+cp -r .config/rofi ~/.config/
+cp -r .config/waybar ~/.config/
+cp -r .config/wofi ~/.config/
+cp -r wallpapers ~/.config/
 ```
 
-2. Create symlinks:
+Kitty is set to use `zsh`. If zsh is not your default shell:
 ```bash
-ln -sf $(pwd)/.config/hypr ~/.config/hypr
-ln -sf $(pwd)/.config/waybar ~/.config/waybar
-ln -sf $(pwd)/.config/kitty ~/.config/kitty
-ln -sf $(pwd)/wallpapers ~/.config/wallpapers
+chsh -s $(which zsh)
 ```
 
-3. Install fonts:
-```bash
-# JetBrains Mono for Kitty
-yay -S jetbrains-mono
-```
-
-4. Log out and log back in to Hyprland, or restart waybar:
-```bash
-killall waybar && waybar &
-```
-
-## Keybindings
+## Keybinds
 
 | Key | Action |
 |-----|--------|
 | Super + Return | Terminal (kitty) |
 | Super + Q | Close window |
-| Super + E | File manager |
-| Super + M | Shutdown menu |
+| Super + E | File manager (thunar) |
+| Super + M | Exit Hyprland |
 | Super + R | App launcher (wofi) |
-| Super + B | Browser |
-| Super + V | Float window |
+| Super + D | App launcher (rofi) |
+| Super + B | Browser (firefox) |
+| Super + V | Toggle float |
 | Super + P | Pseudotile |
 | Super + J | Toggle split |
-| Super + L | Lock screen |
+| Super + L | Lock screen (hyprlock) |
 | Print | Screenshot to clipboard |
-| Super + Print | Screenshot region |
+| Super + Print | Screenshot region to clipboard |
 | Super + Shift + S | Screenshot region to Pictures |
+| Super + [1-0] | Switch workspace |
+| Super + Shift + [1-0] | Move window to workspace |
+| Super + S | Toggle special workspace |
+| Super + Scroll | Switch workspace |
+| Super + LMB/RMB | Move/resize window |
+| XF86Audio* | Volume (wpctl) |
+| XF86MonBrightness* | Brightness (brightnessctl) |
+| XF86AudioNext/Prev/Play | Media (playerctl) |
 
 ## Wallpapers
 
-Wallpapers are located in `wallpapers/`. To change wallpaper, run:
 ```bash
 waypaper set ~/.config/wallpapers/your-image.jpg
 ```
 
-Or use the wallpaper script in `~/.config/hypr/hypr/wallpaper.sh`
+Or use `~/.config/hypr/hypr/wallpaper.sh`.
