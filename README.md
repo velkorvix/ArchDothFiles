@@ -18,7 +18,7 @@ yay -S waypaper jetbrains-mono
 ## Install
 
 ```bash
-git clone https://github.com/mark-smitov/ArchDothFiles.git ~/.config/archdots
+git clone https://github.com/smitovski/ArchDothFiles.git ~/.config/archdots
 cd ~/.config/archdots
 
 cp -r .config/cava ~/.config/
