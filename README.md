@@ -18,7 +18,7 @@ yay -S waypaper jetbrains-mono
 ## Install
 
 ```bash
-git clone https://github.com/smitovski/ArchDothFiles.git ~/.config/archdots
+git clone https://github.com/velkorvix/ArchDothFiles.git ~/.config/archdots
 cd ~/.config/archdots
 
 cp -r .config/cava ~/.config/
@@ -27,6 +27,7 @@ cp -r .config/kitty ~/.config/
 cp -r .config/rofi ~/.config/
 cp -r .config/waybar ~/.config/
 cp -r .config/wofi ~/.config/
+cp -r .config/waypaper ~/.config/
 cp -r wallpapers ~/.config/
 ```
 
